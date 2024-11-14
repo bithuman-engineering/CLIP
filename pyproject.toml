@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "clip"
+version = "0.1.0"
+description = ""
+authors = ["Matri Qi <qjp@bithuman.io>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+ftfy = "*"
+regex = "*"
+tqdm = "*"
+torch = { version = "^2.1.0", source = "torchcpu"}
+torchvision = { version = "^0.16.0", source = "torchcpu" }
+
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+[[tool.poetry.source]]
+name = "torchcpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api" 
